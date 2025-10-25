@@ -1,0 +1,89 @@
+.descriptionbox {
+  width: 100%;
+  max-width: 900px;
+  margin: 40px auto;
+  background-color: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  padding: 30px;
+  font-family: "Poppins", sans-serif;
+  color: #333;
+  line-height: 1.7;
+  transition: all 0.3s ease;
+}
+
+.descriptionbox:hover {
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Navigator Bar */
+.descriptionbox-navigator {
+  display: flex;
+  justify-content: flex-start;
+  border-bottom: 2px solid #eee;
+  margin-bottom: 20px;
+  gap: 20px;
+}
+
+.descriptionbox-nav-box {
+  position: relative;
+  font-size: 18px;
+  font-weight: 600;
+  color: #222;
+  padding: 10px 0;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.descriptionbox-nav-box::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  height: 3px;
+  width: 100%;
+  background-color: #0078ff;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+.descriptionbox-nav-box:hover::after,
+.descriptionbox-nav-box.active::after {
+  transform: scaleX(1);
+}
+
+.fade {
+  color: #777;
+}
+
+.descriptionbox-nav-box:hover {
+  color: #0078ff;
+}
+
+/* Description Text */
+.descriptionobox-description p {
+  font-size: 16px;
+  margin-bottom: 15px;
+  text-align: justify;
+  color: #555;
+}
+
+.descriptionobox-description p:last-child {
+  margin-bottom: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .descriptionbox {
+    padding: 20px;
+  }
+
+  .descriptionbox-nav-box {
+    font-size: 16px;
+  }
+
+  .descriptionobox-description p {
+    font-size: 15px;
+  }
+}
