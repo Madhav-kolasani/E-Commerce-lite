@@ -76,3 +76,43 @@
 .loginsignup-agree input {
   margin-top: 3px;
 }
+
+/* Responsive */
+@media (max-width: 992px) {
+  .loginsignup-container {
+    width: 500px;
+    padding: 30px 40px;
+    height: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .loginsignup {
+    padding-top: 60px;
+  }
+  .loginsignup-container {
+    width: 90%;
+    padding: 20px;
+    height: auto;
+  }
+  .loginsignup h1 {
+    font-size: 22px;
+  }
+}
+
+@media (max-width: 576px) {
+  .loginsignup {
+    padding-top: 40px;
+  }
+  .loginsignup-container {
+    padding: 16px;
+  }
+  .loginsignup-fields input {
+    height: 40px;
+    font-size: 15px;
+  }
+  .loginsignup button {
+    height: 42px;
+    font-size: 16px;
+  }
+}

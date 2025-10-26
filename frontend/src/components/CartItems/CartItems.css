@@ -197,28 +197,74 @@
 /* =======================
    RESPONSIVE DESIGN
    ======================= */
-@media (max-width: 900px) {
+@media (max-width: 1280px) {
   .cartitems {
-    padding: 20px;
+    max-width: 900px;
+    margin: 40px auto;
+  }
+}
+
+@media (max-width: 992px) {
+  .cartitems {
+    max-width: 700px;
+    padding: 25px;
   }
 
   .cartitems-format-main,
   .cartitems-format {
     grid-template-columns: 1.5fr 2fr 1fr 1fr 1fr 0.6fr;
-    font-size: 14px;
+    font-size: 15px;
+    gap: 10px;
   }
 
   .carticon-product-icon {
-    width: 70px;
-    height: 70px;
+    width: 75px;
+    height: 75px;
   }
 
   .cartitems-total h1 {
     font-size: 22px;
   }
+
+  .cartitems-down {
+    gap: 25px;
+  }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
+  .cartitems {
+    padding: 20px;
+    margin: 30px auto;
+  }
+
+  .cartitems-format-main,
+  .cartitems-format {
+    grid-template-columns: 1fr 2fr 1fr 1fr 0.5fr;
+    font-size: 14px;
+  }
+
+  .cartitems-quantity {
+    width: 35px;
+    height: 32px;
+  }
+
+  .cartitems-total-item {
+    font-size: 15px;
+  }
+
+  .cartitems-total button,
+  .cartitems-promobox button {
+    padding: 10px 0;
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 576px) {
+  .cartitems {
+    padding: 15px;
+    margin: 20px auto;
+  }
+
   .cartitems-format-main {
     display: none; /* hide table header for mobile */
   }
@@ -226,15 +272,15 @@
   .cartitems-format {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto auto auto;
-    gap: 10px;
+    gap: 12px;
     text-align: left;
     padding: 15px 0;
     border-bottom: 1px solid #eee;
   }
 
   .carticon-product-icon {
-    width: 90px;
-    height: 90px;
+    width: 85px;
+    height: 85px;
   }
 
   .cartitems-format p {
@@ -243,16 +289,37 @@
   }
 
   .cartitems-quantity {
-    width: 35px;
-    height: 30px;
+    width: 32px;
+    height: 28px;
   }
 
   .cartitems-down {
     flex-direction: column;
+    gap: 20px;
+    margin-top: 30px;
   }
 
   .cartitems-promocode,
   .cartitems-total {
+    width: 100%;
+    min-width: unset;
+  }
+
+  .cartitems-total h1 {
+    font-size: 20px;
+  }
+
+  .cartitems-total-item h3 {
+    font-size: 16px;
+  }
+
+  .cartitems-promobox {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .cartitems-promobox input,
+  .cartitems-promobox button {
     width: 100%;
   }
 }

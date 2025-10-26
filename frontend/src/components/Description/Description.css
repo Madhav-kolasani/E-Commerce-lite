@@ -87,3 +87,16 @@
     font-size: 15px;
   }
 }
+/* Responsive Design for mobile and tablet */
+@media (max-width: 900px) {
+  .descriptionbox {
+    font-size: 1rem;
+    padding: 1rem;
+  }
+}
+@media (max-width: 600px) {
+  .descriptionbox {
+    font-size: 0.9rem;
+    padding: 0.5rem;
+  }
+}

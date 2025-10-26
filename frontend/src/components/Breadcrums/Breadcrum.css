@@ -1,0 +1,32 @@
+/* Breadcrumb / small navigator */
+.breadcrum{
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	color: #5e5e5e;
+	font-size: 16px;
+	font-weight: 600;
+	margin: 20px 170px;
+	text-transform: capitalize;
+}
+
+@media (max-width: 1280px) {
+	.breadcrum{
+		margin: 20px 80px;
+	}
+}
+
+@media (max-width: 768px) {
+	.breadcrum{
+		margin: 15px 20px;
+		font-size: 14px;
+	}
+}
+
+@media (max-width: 576px) {
+	.breadcrum{
+		margin: 10px 12px;
+		font-size: 13px;
+	}
+}
+
