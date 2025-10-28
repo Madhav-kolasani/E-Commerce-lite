@@ -1,0 +1,78 @@
+/* ===== ADMIN LAYOUT ===== */
+.admin {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+    background-color: #f8fafc;
+}
+
+/* Main content area */
+.admin > div:not(.sidebar) {
+    flex: 1;
+    margin-left: 250px; /* Match sidebar width */
+    padding: 15px;
+    padding-top: 85px; /* navbar height + some padding */
+    min-height: 100vh;
+    overflow-y: auto;
+    transition: margin-left 0.3s ease;
+    background-color: #f8fafc;
+}
+
+/* Scrollbar styling */
+.admin > div:not(.sidebar)::-webkit-scrollbar {
+    width: 8px;
+}
+
+.admin > div:not(.sidebar)::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+
+.admin > div:not(.sidebar)::-webkit-scrollbar-thumb {
+    background: #c1c1c1;
+    border-radius: 4px;
+}
+
+.admin > div:not(.sidebar)::-webkit-scrollbar-thumb:hover {
+    background: #a8a8a8;
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+
+/* Large screens and laptops (≤ 1200px) */
+@media (max-width: 1200px) {
+    .admin > div:not(.sidebar) {
+        padding: 20px;
+    }
+}
+
+/* Tablets (≤ 992px) */
+@media (max-width: 992px) {
+    .admin > div:not(.sidebar) {
+        margin-left: 200px; /* Match sidebar width at this breakpoint */
+        padding: 80px 16px 16px 16px; /* Adjusted top padding for navbar */
+    }
+}
+
+/* Mobile (≤ 768px) */
+@media (max-width: 768px) {
+    .admin > div:not(.sidebar) {
+        margin-left: 70px; /* Match collapsed sidebar width */
+        padding: 75px 12px 12px 12px;
+    }
+}
+
+/* Small screens (≤ 480px) */
+@media (max-width: 480px) {
+    .admin > div:not(.sidebar) {
+        margin-left: 60px; /* Match smallest sidebar width */
+        padding: 70px 10px 10px 10px;
+    }
+
+    /* Adjust scrollbar for touch devices */
+    .admin > div:not(.sidebar)::-webkit-scrollbar {
+        width: 4px;
+    }
+}

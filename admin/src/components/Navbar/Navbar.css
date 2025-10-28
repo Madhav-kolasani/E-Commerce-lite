@@ -1,0 +1,113 @@
+/* ===== NAVBAR CONTAINER ===== */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #ffffff;
+  padding: 15px 40px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  border-bottom: 1px solid #eaeaea;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+/* ===== LOGO ===== */
+.navbar img:first-child {
+  height: 45px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.navbar img:first-child:hover {
+  transform: scale(1.05);
+}
+
+/* ===== PROFILE SECTION ===== */
+.nav-profile {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+/* Profile image circle */
+.nav-profile-circle {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid #ddd;
+  position: relative;
+  background-color: #f9f9f9;
+}
+
+/* Crop the SVG to show only the profile part */
+.nav-profile-circle img {
+  position: absolute;
+  top: 0;
+  left: -10px; /* Adjust this value to crop arrow part */
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Dropdown arrow beside the circle */
+.nav-profile-arrow {
+  width: 14px;
+  height: 14px;
+  transform: translateY(1px);
+  opacity: 0.7;
+  transition: transform 0.3s ease;
+}
+
+.nav-profile:hover .nav-profile-arrow {
+  transform: translateY(1px) rotate(180deg);
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+
+/* Tablets (width ≤ 768px) */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 12px 25px;
+  }
+
+  .navbar img:first-child {
+    height: 38px;
+  }
+
+  .nav-profile-circle {
+    width: 35px;
+    height: 35px;
+  }
+
+  .nav-profile-arrow {
+    width: 12px;
+    height: 12px;
+  }
+}
+
+/* Mobile devices (width ≤ 480px) */
+@media (max-width: 480px) {
+  .navbar {
+    padding: 10px 20px;
+  }
+
+  .navbar img:first-child {
+    height: 34px;
+  }
+
+  .nav-profile-circle {
+    width: 32px;
+    height: 32px;
+  }
+
+  .nav-profile {
+    gap: 6px;
+  }
+
+  .nav-profile-arrow {
+    width: 10px;
+    height: 10px;
+  }
+}
