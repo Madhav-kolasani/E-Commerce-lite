@@ -6,6 +6,8 @@ const jwt = require('jsonwebtoken');
 const multer = require('multer');
 const path = require('path');
 const cors = require('cors');
+const { type } = require('os');
+const { error } = require('console');
 
 // Middlewares
 app.use(cors());
@@ -118,6 +120,78 @@ app.post('/removeproduct',async (req, res)=>{
 app.get('/allproducts',async (req, res)=>{
   let products = await Product.find({});
   res.send(products);
+})
+
+// Schema creating for User model
+const Users = mongoose.model('Users',{
+  name:{
+    type:String,
+    required:true
+  },
+  email:{
+    type:String,
+    unique:true,
+  },
+  password:{
+    type:String,
+
+  },
+  cartData:{
+    type:Object,
+  },
+  data:{
+    type:Date,
+    default:Date.now,
+  }
+})
+
+// Creating Endpoint for registering the user
+app.post('/signup',async(req,res)=>{
+  let check = await Users.findOne({email:req.body.email});
+  if (check){
+    return res.status(400).json({success:false,errors:"existing user found with same email address"});
+  }
+  let cart = {};
+  for (let i=0;i<300;i++){
+    cart[i]=0;
+  }
+  const user = new Users({
+    name:req.body.username,
+    email:req.body.email,
+    password:req.body.password,
+    cartData:cart,
+
+  })
+  await user.save();
+  const data = {
+    user:{
+      id:user.id
+    }
+  }
+  const token = jwt.sign(data,'secret_ecom');
+  res.json({success:true, token});
+})
+
+// creating endpoint for user login
+app.post('/login',async (req, res)=>{
+  let user = await Users.findOne({email:req.body.email});
+  if (user){
+    const passCompare = req.body.password === user.password;
+    if (passCompare){
+      const data = {
+        user:{
+          id:user.id
+        }
+      }
+      const token = jwt.sign(data,'secret_econ');
+      res.json({success:true, token});
+    }
+    else{
+      res.json({success:false, errors:"Wrong Password"});
+    }
+  }else{
+    res.json({success:false, errors:"Wrong Email Id"});
+  }
 })
 
 // Start server
